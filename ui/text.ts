@@ -9,20 +9,26 @@ export const Text = styled("span", {
   paddingInline: "1rem",
   cursor: "pointer",
   marginTop: "1rem",
+  $$topGradient: "gray",
+  $$bottomGradient: "white",
   variants: {
     Color: {
       primary: {
         color: "$primaryColor",
         background: "$secondaryColor",
+        $$topGradient: "$colors$secondaryColor",
+        $$bottomGradient: "Aqua",
       },
       secondary: {
         color: "$secondaryColor",
         background: "$primaryColor",
+        $$topGradient: "$colors$primaryColor",
+        $$bottomGradient: "Aquamarine",
       },
     },
     Gradient: {
       true: {
-        background: "linear-gradient(gray, white)",
+        background: "linear-gradient($$topGradient, $$bottomGradient)",
       },
     },
     Disabled: {
@@ -47,19 +53,20 @@ export const Text = styled("span", {
         color: "Aquamarine",
       },
     },
-    {
-      Color: "primary",
-      Gradient: "true",
-      css: {
-        background: "linear-gradient($secondaryColor, Aqua)",
-      },
-    },
-    {
-      Color: "secondary",
-      Gradient: "true",
-      css: {
-        background: "linear-gradient($primaryColor, Aquamarine)",
-      },
-    },
+    // Removing gradient changes with compoundVariants since we are using now locally scoped tokens
+    // {
+    //   Color: "primary",
+    //   Gradient: "true",
+    //   css: {
+    //     background: "linear-gradient($secondaryColor, Aqua)",
+    //   },
+    // },
+    // {
+    //   Color: "secondary",
+    //   Gradient: "true",
+    //   css: {
+    //     background: "linear-gradient($primaryColor, Aquamarine)",
+    //   },
+    // },
   ],
 });
