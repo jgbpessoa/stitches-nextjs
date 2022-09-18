@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { styled } from "../ui/stitches.config";
+import { theme } from "../ui/stitches.config";
 import { Text } from "../ui/text";
 
 const Home: NextPage = () => {
@@ -21,6 +21,11 @@ const Home: NextPage = () => {
         Introduction to Stitches
       </Text>
       <Text Color="secondary" Gradient>
+        Introduction to Stitches
+      </Text>
+      <Text css={{ color: "yellow" }}>Introduction to Stitches</Text>
+      <Text css={{ color: "$errorColor" }}>Introduction to Stitches</Text>
+      <Text css={{ color: theme.colors.successColor }}>
         Introduction to Stitches
       </Text>
     </>
