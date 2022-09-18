@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
-import { styled } from "@stitches/react";
+import { styled } from "../ui/stitches.config";
 
 const Title = styled("h1", {
-  color: "blue",
+  color: "$primaryColor",
+  fontSize: "$fs3",
 });
 
 const Home: NextPage = () => {
